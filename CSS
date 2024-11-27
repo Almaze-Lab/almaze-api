@@ -1,0 +1,22 @@
+/* Basic responsive design */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+
+header {
+    text-align: center;
+}
+#projects {
+    margin-top: 20px;
+
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+@media (min-width: 600px) {
+    .project {
+        display: flex;
+        justify-content: space-between;
+    }
+}
