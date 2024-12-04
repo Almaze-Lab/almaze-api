@@ -13,7 +13,6 @@ class AgentState(TypedDict):
     iterations: int
     final_answer: str | None
 class BaseAgent(ABC):
-    """Base class for all agents in the system."""
     
     def __init__(self, name: str, system_prompt: str, tools: List[Any], max_iterations: int = 5):
         self.name = name
@@ -57,7 +56,6 @@ Instructions:
         
         # Add processing steps
         workflow.add_node("process", self._process_step)
-        
         # Set entry point
         workflow.set_entry_point("process")
         

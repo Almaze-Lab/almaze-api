@@ -1,5 +1,4 @@
 /* Basic responsive design */
-body {
     font-family: Arial, sans-serif;
     padding: 20px;
     margin: 0;
@@ -16,7 +15,6 @@ header {
 }
 @media (min-width: 600px) {
     .project {
-        display: flex;
         justify-content: space-between;
     }
 }
