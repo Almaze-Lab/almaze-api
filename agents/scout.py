@@ -125,7 +125,6 @@ Your responses should be informative, clear, and well-organized, focusing on pro
                     ]
                 }
             
-            return {
                 "status": "success",
                 "query": query,
                 "timestamp": datetime.now().isoformat(),
@@ -218,7 +217,6 @@ Focus on clarity, accuracy, and providing meaningful insights."""
                 "suggestions": [
                     "Try being more specific",
                     "Rephrase your question",
-                    "Check your internet connection"
                 ]
             }
             return {

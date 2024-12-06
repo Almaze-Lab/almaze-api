@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 
 def setup_logging(log_level: str = 'INFO') -> None:
     """Configure logging for the application."""
-    numeric_level = getattr(logging, log_level.upper(), None)
     if not isinstance(numeric_level, int):
         raise ValueError(f'Invalid log level: {log_level}')
     logging.getLogger().setLevel(numeric_level)
@@ -48,14 +47,12 @@ def load_module_functions(directory: str, module_type: str) -> List[Any]:
 
 def all_tool_functions(exclude: Optional[List[str]] = None) -> List[Any]:
     """Get all available tool functions."""
-    return load_module_functions('tools', 'tool')
 
 def all_agents(exclude: Optional[List[str]] = None) -> List[str]:
     """Get all available agents."""
     agents = []
     agents_dir = get_project_root() / 'agents'
     
-    for file in os.listdir(agents_dir):
         if file.endswith('.py') and not file.startswith('__'):
             agent_name = file[:-3]
             if exclude and agent_name in exclude:
