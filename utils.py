@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 def setup_logging(log_level: str = 'INFO') -> None:
     """Configure logging for the application."""
+    numeric_level = getattr(logging, log_level.upper(), None)
     if not isinstance(numeric_level, int):
         raise ValueError(f'Invalid log level: {log_level}')
     logging.getLogger().setLevel(numeric_level)
@@ -47,6 +48,7 @@ def load_module_functions(directory: str, module_type: str) -> List[Any]:
 
 def all_tool_functions(exclude: Optional[List[str]] = None) -> List[Any]:
     """Get all available tool functions."""
+    return load_module_functions('tools', 'tool')
 
 def all_agents(exclude: Optional[List[str]] = None) -> List[str]:
     """Get all available agents."""
