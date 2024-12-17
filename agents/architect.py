@@ -12,7 +12,6 @@ Tools MUST:
 - Go in the `tools` directory
 - Include a docstring that succinctly describes what the tool does
 - Have a corresponding test file that verifies the intended behavior
-"""
         super().__init__("architect", system_prompt, all_tool_functions())
 
     def process(self, input_text: str) -> str:
@@ -25,5 +24,4 @@ Tools MUST:
 
 def architect(task: str) -> str:
     """Creates new tools for agents to use."""
-    agent = ArchitectAgent()
     return agent.process(task)
