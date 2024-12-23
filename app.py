@@ -52,7 +52,6 @@ class ChatResponse(BaseModel):
 # Store active sessions
 active_sessions: Dict[str, dict] = {}
 
-@app.post("/api/chat", response_model=ChatResponse)
 async def chat_endpoint(request: ChatRequest):
     try:
         # Generate session_id if not provided
@@ -78,7 +77,6 @@ async def chat_endpoint(request: ChatRequest):
             "content": response
         })
         
-        return ChatResponse(
             response=response,
             session_id=session_id
         )
