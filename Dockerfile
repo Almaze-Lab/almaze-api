@@ -2,6 +2,7 @@
 FROM python:3.9-slim
 
 # Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     WORKER_TIMEOUT=300 \
     GRACEFUL_TIMEOUT=120 \
@@ -10,6 +11,7 @@ FROM python:3.9-slim
 # Set work directory
 WORKDIR /app
 
+# Install system dependencies
         gcc \
         python3-dev \
         curl \
@@ -23,6 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create a non-root user
+RUN chown -R appuser:appuser /app
 USER appuser
 
 # Expose the port the app runs on
