@@ -71,6 +71,7 @@ Your responses should be informative, clear, and well-organized, focusing on pro
             logger.warning(f"Text cleaning error: {e}")
             return text
 
+    def _format_query(self, query: str) -> str:
         query = query.lower().strip()
         
         # Common query transformations
@@ -125,6 +126,7 @@ Your responses should be informative, clear, and well-organized, focusing on pro
                     ]
                 }
             
+            return {
                 "status": "success",
                 "query": query,
                 "timestamp": datetime.now().isoformat(),
@@ -217,6 +219,7 @@ Focus on clarity, accuracy, and providing meaningful insights."""
                 "suggestions": [
                     "Try being more specific",
                     "Rephrase your question",
+                    "Check your internet connection"
                 ]
             }
             return {

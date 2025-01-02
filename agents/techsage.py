@@ -244,7 +244,6 @@ Provide a production-ready solution that emphasizes:
             section_pattern = re.compile(
                 rf'{section_name}:\n(.*?)(?=\n\n|\Z)', 
                 re.DOTALL | re.IGNORECASE
-            )
             match = section_pattern.search(content)
             
             if match:
@@ -265,7 +264,6 @@ Provide a production-ready solution that emphasizes:
         """Always terminate after one iteration."""
         return END
 
-def techsage(task: str) -> str:
     """Execute development task and return comprehensive results."""
     try:
         agent = TechSageAgent()
