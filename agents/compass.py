@@ -87,7 +87,6 @@ Return your analysis in this format:
                     for a in (lines[2].split(':')[1].split(',') if len(lines) > 2 and ':' in lines[2] 
                     else lines[2].split(',') if len(lines) > 2 else [])
                     if a.strip() and a.strip().lower() != 'none'
-                ],
                 'task_breakdown': lines[3:] if len(lines) > 3 else []
             }
         except Exception as e:

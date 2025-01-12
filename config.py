@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+
 # Load environment variables
+env_path = Path(__file__).parent / '.env'
 load_dotenv(env_path)
 
 # Server configuration
