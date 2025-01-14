@@ -3,11 +3,9 @@ from langchain_core.tools import tool
 
 @tool
 def assign_agent_to_task(agent_name: str, task: str) -> str:
-    """Assigns a task to a specific agent."""
         agent_module = __import__(f"agents.{agent_name}", fromlist=[agent_name])
         # Get agent function
         
-            return agent_func('internal_session', task)
         else:
             return agent_func(task)
     except AttributeError:
