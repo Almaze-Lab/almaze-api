@@ -149,6 +149,7 @@ Your responses should be informative, clear, and well-organized, focusing on pro
             }
 
     def _process_step(self, state: AgentState) -> AgentState:
+        logger.info(f"{self.name} is researching...")
         messages = state.get('messages', [])
 
         try:
