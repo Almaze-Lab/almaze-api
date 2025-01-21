@@ -25,4 +25,5 @@ Tools MUST:
 
 def architect(task: str) -> str:
     """Creates new tools for agents to use."""
+    agent = ArchitectAgent()
     return agent.process(task)
