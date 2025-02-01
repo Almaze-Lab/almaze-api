@@ -5,7 +5,6 @@ from utils import all_tool_functions
 class ArchitectAgent(BaseAgent):
     def __init__(self):
         system_prompt = """You are architect, a ReAct agent that develops LangChain tools for other agents.
-You approach your given task this way:
 3. Confirm the tool is complete with its name and a succinct description of its purpose.
 
 Tools MUST:
@@ -19,8 +18,6 @@ Tools MUST:
         """Process request to create a new tool."""
         return self.graph.invoke({
                 SystemMessage(self.system_prompt),
-                HumanMessage(input_text)
-            ]
         })
 
 def architect(task: str) -> str:

@@ -1,6 +1,5 @@
 import requests
 from langchain_core.tools import tool
-
 @tool
 def fetch_web_page_content(url: str) -> str:
     """Fetch and process the content of a web page."""
@@ -11,7 +10,6 @@ def fetch_web_page_content(url: str) -> str:
         }
         
         response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         for element in soup(['script', 'style', 'header', 'footer', 'nav']):
             element.decompose()
