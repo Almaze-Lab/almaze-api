@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -12,7 +11,6 @@ PORT = int(os.getenv('PORT', 8000))
 # OpenAI configuration
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY must be set in .env file")
 SERPER_API_KEY = os.getenv('SERPER_API_KEY')
 if not SERPER_API_KEY:
 
