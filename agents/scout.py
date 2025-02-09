@@ -153,7 +153,6 @@ Your responses should be informative, clear, and well-organized, focusing on pro
         messages = state.get('messages', [])
 
         try:
-            # Extract and format query
             query = messages[-1].content if messages and hasattr(messages[-1], 'content') else "No query provided"
             formatted_query = self._format_query(query)
 
@@ -167,7 +166,6 @@ Your responses should be informative, clear, and well-organized, focusing on pro
             processed_results = self._process_search_results(search_results, query)
             
             # Handle no results scenario
-            if processed_results["status"] == "no_results":
                 return {
                     "messages": messages + [AIMessage(content=json.dumps(processed_results))],
                     "iterations": 1

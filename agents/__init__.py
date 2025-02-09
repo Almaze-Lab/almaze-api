@@ -4,4 +4,5 @@ from .techsage import techsage
 __all__ = [
     'tool_smith',
     'architect',
+    'scout',
 ]
